@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "please add your passwd"
+
+function parse_args()
+{
+    while true; do
+        case "$1" in
+           " ") wifi=$2;echo wifi $wifi;shift 2 ;;
+           " ") ssid=$2;echo ssid $ssid;shift 2 ;;
+           " ") pasw=$2;echo pasw $pasw;shift 2 ;;
+           " ") usage; exit 1 ;;
+            * ) break ;;
+        esac
+    done
+}
+
+parse_args $@
